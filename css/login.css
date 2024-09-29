@@ -1,0 +1,188 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+    background-color: rgb(19, 20, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginform
+{
+    width:min(450px,95%);
+    height: 580px;
+    border:solid 1px aqua;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    border-radius:20px;
+    transition: all 1s;
+}
+
+.loginform:hover{
+    box-shadow: 0 0 100px 0px #45DFB1,0 0 400px 10px #45DFB1;
+    animation: blink 1s infinite;
+    background-color:black;
+}
+@keyframes blink {
+    0%,100%{
+        box-shadow: 0 0 100px 0px #0AD1C8,0 0 400px 10px #0AD1C8;
+    }
+    40%,50%,60%
+    {
+        box-shadow: 0 0 50px 0px #0AD1C8,0 0 100px 0px #0AD1C8;
+    }
+}
+
+
+.inputgroup
+{
+    position:relative; 
+    height:50px;
+    width:85%;  
+}
+
+.inputgroup input
+{
+    position:absolute;
+    width:100%;
+    height:45px;
+    background: transparent;
+    outline:none;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:solid 1px rgb(59, 238, 238);
+    color:white;
+    font-size: 20px;
+    transition: all 200ms;
+}
+
+.inputgroup label
+{
+    position:absolute;
+    transition: all 200ms;
+    color:aquamarine;
+}
+
+.inputgroup input:hover +label,
+.inputgroup input:focus +label,
+.inputgroup input:valid +label
+{
+    transform: translateY(-20px);
+    color:aqua;
+}
+.inputgroup input:hover ,
+.inputgroup input:focus ,
+.inputgroup input:valid 
+{
+    
+    border-bottom:solid 1px aqua;
+}
+
+.topmargin{
+    margin-top: 50px;
+}
+.topmarginlarge{
+    margin-top: 80px;
+}
+
+.divcallforaction
+{
+    width:85%;
+    height:45px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.btnlogin
+{
+    border:solid 1px aqua;
+    width:150px;
+    height:45px;
+    padding:5px;
+    border-radius: 5px;
+    color:white;
+    font-weight: bolder;
+    transition: all 200ms;
+}
+.btnlogin:hover{
+    box-shadow: 0 0 100px rgb(88, 242, 216);
+    transform: translateY(-5px);
+}
+.inactivecolor
+{
+    background-color: rgb(1, 107, 1);
+}
+
+.activecolor
+{
+    background-color: rgb(2, 211, 2);
+}
+
+.diverror
+{
+    background-color: transparent;
+    color:white;
+    height:45px;
+    width:85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+    letter-spacing: 1px;
+}
+.applyerrordiv
+{
+    visibility: visible;
+    opacity: 1;
+    animation:falldown 1s linear;
+}
+
+input:-internal-autofill-selected 
+{
+    background-color: transparent;
+}
+/* Target autofilled input */
+input:-webkit-autofill {
+    background-color: white !important; /* Override the background color */
+    color: black !important; /* Ensure text color remains unchanged */
+    box-shadow: 0 0 0 30px white inset !important; /* Fix background color */
+}
+
+/* Optional: Apply to select, textarea as well */
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* Firefox Support */
+input:-moz-autofill {
+    background-color: white !important;
+    color: black !important;
+}
+
+
+@keyframes falldown {
+    0%{opacity: 0;transform: translateY(-100px);}
+    49%{opacity: 1;transform: translateY(0px);letter-spacing: 1px;}
+    50%{opacity: 1;transform: translateY(0px);letter-spacing: 3px;}
+    55%{opacity: 1;transform: translateY(0px);letter-spacing: 1px;}
+    60%{opacity: 1;transform: translateY(-50px);}
+    80%{opacity: 1;transform: translateY(0px);}
+    85%{opacity: 1;transform: translateY(-10px);}
+    100%{opacity: 1;transform: translateY(0px);}
+}
